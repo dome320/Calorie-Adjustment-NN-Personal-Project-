@@ -38,7 +38,7 @@ model.eval()
 
 
 #Training
-"""
+
 my_df = pd.read_csv("bulk_cut_dataset.csv")
 
 #Train, Test, Split
@@ -52,6 +52,7 @@ adjustment_to_class = {
      300: 6
 }
 
+"""
 X = my_df.drop('delta_cal_adjustment', axis=1)
 y = my_df['delta_cal_adjustment'].map(adjustment_to_class)
 
