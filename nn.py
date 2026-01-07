@@ -30,7 +30,15 @@ class Model(nn.Module):
 torch.manual_seed(41) 
 
 model = Model() 
+#Load saved Model
+model.load_state_dict(torch.load("calorie_nn.pt"))
+model.eval()
 
+
+
+
+#Training
+"""
 my_df = pd.read_csv("bulk_cut_dataset.csv")
 
 #Train, Test, Split
@@ -96,7 +104,7 @@ for i in range(epochs):
     optimizer.step() 
 
 
-"""
+
 #Evaluate model on test set 
 
 with torch.no_grad(): #Turns off back propogation 
@@ -122,8 +130,6 @@ print(f'We got {correct} correct!')
 """
 
 # Interactive prediction
-
-
 class_to_adjustment = {v: k for k, v in adjustment_to_class.items()}
 
 model.eval()
@@ -157,6 +163,3 @@ with torch.no_grad():
         pred_adjustment = class_to_adjustment[pred_class]
 
         print(f"\nPredicted calorie adjustment: {pred_adjustment:+d} kcal/day")
-
-torch.save(model.state_dict(), "calorie_nn.pt")
-print("Model saved to calorie_nn.pt")
