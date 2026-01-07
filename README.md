@@ -63,19 +63,20 @@ The model is intentionally simple to make experimentation and iteration fast and
 ## Project Structure
 
 NN Project/
-├── nn.py # Model definition, training, and inference
-├── bulk_cut_dataset.csv # Synthetic training dataset
-├── calorie_nn.pt # Saved trained model weights
-├── .gitignore
-└── README.md
+- ├── nn.py # Model definition, training, and inference
+- ├── bulk_cut_dataset.csv # Synthetic training dataset
+- ├── calorie_nn.pt # Saved trained model weights
+- ├── .gitignore
+- └── README.md
 
 
 ## Example Interaction
 
 Enter weekly inputs:
-cal_avg_last_week: 2900
-bw_change_last_week: -0.6
-target_rate_lbs_per_week: -0.5
+
+- cal_avg_last_week: 2900
+- bw_change_last_week: -0.6
+- target_rate_lbs_per_week: -0.5
 
 Predicted calorie adjustment: -100 kcal/day
 
